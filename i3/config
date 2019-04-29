@@ -1,0 +1,78 @@
+# Jovan Lanik's i3 config 1.0
+# www.github.com/jovanlanik
+# clean and simple
+
+exec_always	xrandr --output DP-1 --mode 1680x1050 --pos 0x150 --output DVI-D-1 --primary --mode 1920x1200 --pos 1680x0
+exec_always	hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1
+
+default_border		pixel 2
+default_floating_border normal 0
+hide_edge_borders both
+gaps inner	4
+gaps outer	-4
+font pango:Ctrld 10
+title_align center
+
+client.focused		#0c0c0c #0c0c0c #f5f5f5 #0c0c0c
+client.focused_inactive	#0c0c0c #0c0c0c #f5f5f5 #0c0c0c
+client.unfocused	#0c0c0c #0c0c0c #f5f5f5 #0c0c0c
+client.urgent		#0c0c0c #0c0c0c #f5f5f5 #0c0c0c
+
+set $mod	mod4
+
+set $terminal	alacritty
+set $browser	firefox
+set $torrent	transmission-gtk
+
+set $ws1	"1"
+set $ws2	"2"
+set $ws3	"3"
+set $ws4	"4"
+set $ws5	"5"
+set $ws6	"6"
+
+workspace $ws1 output	DVI-D-1
+workspace $ws2 output	DVI-D-1
+workspace $ws3 output	DVI-D-1
+workspace $ws4 output	DP-1
+workspace $ws5 output	DP-1
+workspace $ws6 output	DP-1
+
+floating_modifier $mod
+
+bindsym $mod+t		exec $terminal
+bindsym $mod+b		exec $browser
+bindsym $mod+c		exec $torrent
+
+bindsym $mod+q	kill
+bindsym $mod+h	focus left
+bindsym $mod+j	focus down
+bindsym $mod+k	focus up
+bindsym $mod+l	focus right
+bindsym $mod+f	focus mode_toggle
+bindsym $mod+s	split h
+bindsym $mod+d	split v
+bindsym $mod+1	workspace $ws1
+bindsym $mod+2	workspace $ws2
+bindsym $mod+3	workspace $ws3
+bindsym $mod+4	workspace $ws4
+bindsym $mod+5	workspace $ws5
+bindsym $mod+6	workspace $ws6
+
+bindsym $mod+Shift+h	move left
+bindsym $mod+Shift+j	move down
+bindsym $mod+Shift+k	move up
+bindsym $mod+Shift+l	move right
+bindsym $mod+Shift+f	floating toggle
+bindsym $mod+Shift+s	layout splith
+bindsym $mod+Shift+d	layout splitv
+bindsym $mod+Shift+1	move container to workspace $ws1
+bindsym $mod+Shift+2	move container to workspace $ws2
+bindsym $mod+Shift+3	move container to workspace $ws3
+bindsym $mod+Shift+4	move container to workspace $ws4
+bindsym $mod+Shift+5	move container to workspace $ws5
+bindsym $mod+Shift+6	move container to workspace $ws6
+
+bindsym $mod+Shift+r	restart
+bindsym $mod+Shift+e	exec i3-msg exit
+
