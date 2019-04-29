@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/user/.config/pulse/9de86c3a9f0eb9da70e12fbf5c65e8d0-runtime'
+let g:netrw_dirhist_2='/home/user/.config/pulse'
+let g:netrw_dirhist_3='/home/user/.config/.git'

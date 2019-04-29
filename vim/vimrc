@@ -1,0 +1,9 @@
+" Jovan Lanik's vim config 1.0
+" www.github.com/jovanlanik
+" clean and simple
+
+set nocompatible
+set number
+set autoindent
+set viminfo+=n~/.vim/viminfo
+syntax on

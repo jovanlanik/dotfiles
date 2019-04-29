@@ -1,1 +1,1 @@
-/home/user/.xinitrc
+i3
