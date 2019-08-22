@@ -3,14 +3,14 @@
 # clean and simple
 
 exec_always	xrandr --output DP-1 --mode 1680x1050 --pos 0x150 --output DVI-D-1 --primary --mode 1920x1200 --pos 1680x0
-exec_always	hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1
+exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1
 
 default_border		pixel 2
 default_floating_border normal 0
 hide_edge_borders both
-gaps inner	4
+gaps inner	+4
 gaps outer	-4
-font pango:Dina 10
+font pango:Dina 7.5
 title_align center
 
 client.focused		#0c0c0c #0c0c0c #f5f5f5 #0c0c0c
@@ -43,6 +43,16 @@ floating_modifier $mod
 bindsym $mod+t	exec $terminal
 bindsym $mod+b	exec $browser
 bindsym $mod+c	exec $torrent
+
+bindsym $mod+v	exec ~/.config/i3/swap.sh
+
+mode $drag {
+	bindsym --whole-window button1 mark swap; mode $drop
+}
+
+mode $drop {
+	bindsym --whole-window button1 swap container with mark swap; unmark swap
+}
 
 bindsym $mod+q	kill
 bindsym $mod+h	focus left

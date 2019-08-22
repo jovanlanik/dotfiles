@@ -18,6 +18,7 @@ zstyle ':completion:*:commands'	list-colors	'=*=32'
 zstyle ':completion:*:aliases'	list-colors	'=*=33'
 zstyle ':completion:*:builtins'	list-colors	'=*=36'
 
+alias q="exit"
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias lh="ls -d .*"
