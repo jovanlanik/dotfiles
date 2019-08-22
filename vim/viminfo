@@ -11,21 +11,29 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/N
+~MSle0/s
 
 # Last Substitute Search Pattern:
-~MSle0&N
+~MSle0~&textcolor
 
 # Last Substitute String:
-$
+$tabl_background_text
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1566487468,,"wq"
-:w
-|2,0,1566487467,,"w"
+|2,0,1566508433,,"wq"
 :q
-|2,0,1566487362,,"q"
+|2,0,1566490646,,"q"
+:w
+|2,0,1566490025,,"w"
+:%s/textcolor/tabl_background_text/g
+|2,0,1566490017,,"%s/textcolor/tabl_background_text/g"
+:%s/headerURL/theme_frame/g
+|2,0,1566489978,,"%s/headerURL/theme_frame/g"
+:%s/accentcolor/frame/g
+|2,0,1566489948,,"%s/accentcolor/frame/g"
+:%s/accent
+|2,0,1566489931,,"%s/accent"
 :q!
 |2,0,1566150969,,"q!"
 :.,.+3w
@@ -76,6 +84,14 @@ $
 |2,0,1554060208,,"%s/countChildren/allChildren/gc"
 
 # Search String History (newest to oldest):
+? textcolor
+|2,1,1566490017,,"textcolor"
+? headerURL
+|2,1,1566489978,,"headerURL"
+? accentcolor
+|2,1,1566489948,,"accentcolor"
+?/s/accentcolor/frame/g
+|2,1,1566489887,47,"s/accentcolor/frame/g"
 ?/MESH
 |2,1,1565870128,47,"MESH"
 ? @$
@@ -200,240 +216,262 @@ $
 		hours + (minutes<10? "0": "") + minutes
 |3,0,9,1,1,0,1563134687,"	hours + (minutes<10? \"0\": \"\") + minutes"
 ""-	CHAR	0
-	3 
-|3,1,36,0,1,0,1566487461,"3 "
+	l
+|3,1,36,0,1,0,1566490024,"l"
 
 # File marks:
-'0  15  25  ~/dotfiles/i3/swap.sh
-|4,48,15,25,1566487468,"~/dotfiles/i3/swap.sh"
-'1  54  60  ~/dotfiles/i3/config
-|4,49,54,60,1566487337,"~/dotfiles/i3/config"
-'2  13  12  ~/dotfiles/i3/swap.sh
-|4,50,13,12,1566487255,"~/dotfiles/i3/swap.sh"
-'3  10  12  ~/dotfiles/i3/swap.sh
-|4,51,10,12,1566487255,"~/dotfiles/i3/swap.sh"
-'4  54  73  ~/dotfiles/i3/config
-|4,52,54,73,1566487253,"~/dotfiles/i3/config"
-'5  4  17  ~/dotfiles/i3/drag.sh
-|4,53,4,17,1566486190,"~/dotfiles/i3/drag.sh"
-'6  21  13  ~/dotfiles/zshrc
-|4,54,21,13,1566485881,"~/dotfiles/zshrc"
-'7  9  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,55,9,0,1565872032,"/etc/wpa_supplicant/wpa_supplicant.conf"
-'8  3  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,56,3,0,1565871944,"/etc/wpa_supplicant/wpa_supplicant.conf"
-'9  3  0  /etc/wpa_supplicant/wpa_supplicant.conf
-|4,57,3,0,1565871944,"/etc/wpa_supplicant/wpa_supplicant.conf"
+'0  1  6  ~/dotfiles/.gitignore
+|4,48,1,6,1566508433,"~/dotfiles/.gitignore"
+'1  27  4  ~/projects/ffcas/background.js
+|4,49,27,4,1566490646,"~/projects/ffcas/background.js"
+'2  4  13  ~/projects/ffcas/manifest.json
+|4,50,4,13,1566490146,"~/projects/ffcas/manifest.json"
+'3  17  7  ~/projects/ffcas/background.js
+|4,51,17,7,1566490031,"~/projects/ffcas/background.js"
+'4  17  7  ~/projects/ffcas/background.js
+|4,52,17,7,1566490031,"~/projects/ffcas/background.js"
+'5  6  2  ~/projects/ffcas/background.js
+|4,53,6,2,1566489932,"~/projects/ffcas/background.js"
+'6  6  2  ~/projects/ffcas/background.js
+|4,54,6,2,1566489932,"~/projects/ffcas/background.js"
+'7  6  2  ~/projects/ffcas/background.js
+|4,55,6,2,1566489932,"~/projects/ffcas/background.js"
+'8  6  2  ~/projects/ffcas/background.js
+|4,56,6,2,1566489932,"~/projects/ffcas/background.js"
+'9  8  3  ~/dotfiles/i3/swap.sh
+|4,57,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 
 # Jumplist (newest first):
--'  15  25  ~/dotfiles/i3/swap.sh
-|4,39,15,25,1566487468,"~/dotfiles/i3/swap.sh"
--'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566487370,"~/dotfiles/i3/swap.sh"
--'  54  60  ~/dotfiles/i3/config
-|4,39,54,60,1566487337,"~/dotfiles/i3/config"
--'  54  60  ~/dotfiles/i3/config
-|4,39,54,60,1566487337,"~/dotfiles/i3/config"
--'  54  60  ~/dotfiles/i3/config
-|4,39,54,60,1566487337,"~/dotfiles/i3/config"
--'  54  60  ~/dotfiles/i3/config
-|4,39,54,60,1566487337,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566487296,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566487296,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566487296,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566487296,"~/dotfiles/i3/config"
--'  13  12  ~/dotfiles/i3/swap.sh
-|4,39,13,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  10  12  ~/dotfiles/i3/swap.sh
-|4,39,10,12,1566487255,"~/dotfiles/i3/swap.sh"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  54  73  ~/dotfiles/i3/config
-|4,39,54,73,1566487253,"~/dotfiles/i3/config"
--'  11  3  ~/dotfiles/i3/swap.sh
-|4,39,11,3,1566486740,"~/dotfiles/i3/swap.sh"
+-'  1  6  ~/dotfiles/.gitignore
+|4,39,1,6,1566508433,"~/dotfiles/.gitignore"
+-'  27  4  ~/projects/ffcas/background.js
+|4,39,27,4,1566490646,"~/projects/ffcas/background.js"
+-'  27  4  ~/projects/ffcas/background.js
+|4,39,27,4,1566490646,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566490609,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566490609,"~/projects/ffcas/background.js"
+-'  4  13  ~/projects/ffcas/manifest.json
+|4,39,4,13,1566490146,"~/projects/ffcas/manifest.json"
+-'  4  13  ~/projects/ffcas/manifest.json
+|4,39,4,13,1566490146,"~/projects/ffcas/manifest.json"
+-'  4  13  ~/projects/ffcas/manifest.json
+|4,39,4,13,1566490146,"~/projects/ffcas/manifest.json"
+-'  4  13  ~/projects/ffcas/manifest.json
+|4,39,4,13,1566490146,"~/projects/ffcas/manifest.json"
+-'  1  0  ~/projects/ffcas/manifest.json
+|4,39,1,0,1566490127,"~/projects/ffcas/manifest.json"
+-'  1  0  ~/projects/ffcas/manifest.json
+|4,39,1,0,1566490127,"~/projects/ffcas/manifest.json"
+-'  1  0  ~/projects/ffcas/manifest.json
+|4,39,1,0,1566490127,"~/projects/ffcas/manifest.json"
+-'  1  0  ~/projects/ffcas/manifest.json
+|4,39,1,0,1566490127,"~/projects/ffcas/manifest.json"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  17  7  ~/projects/ffcas/background.js
+|4,39,17,7,1566490031,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  40  4  ~/projects/ffcas/background.js
+|4,39,40,4,1566490017,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489948,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489948,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489948,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489948,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  6  2  ~/projects/ffcas/background.js
+|4,39,6,2,1566489932,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489887,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489887,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489887,"~/projects/ffcas/background.js"
+-'  1  0  ~/projects/ffcas/background.js
+|4,39,1,0,1566489887,"~/projects/ffcas/background.js"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  8  3  ~/dotfiles/i3/swap.sh
-|4,39,8,3,1566486740,"~/dotfiles/i3/swap.sh"
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
+-'  8  3  ~/dotfiles/i3/swap.sh
+|4,39,8,3,1566489701,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 -'  1  0  ~/dotfiles/i3/swap.sh
-|4,39,1,0,1566486206,"~/dotfiles/i3/swap.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  4  17  ~/dotfiles/i3/drag.sh
-|4,39,4,17,1566486190,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/drag.sh
-|4,39,1,0,1566486115,"~/dotfiles/i3/drag.sh"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  1  0  ~/dotfiles/i3/config
-|4,39,1,0,1566485901,"~/dotfiles/i3/config"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
--'  21  13  ~/dotfiles/zshrc
-|4,39,21,13,1566485881,"~/dotfiles/zshrc"
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
+-'  1  0  ~/dotfiles/i3/swap.sh
+|4,39,1,0,1566489651,"~/dotfiles/i3/swap.sh"
 
 # History of marks within files (newest to oldest):
 
+> ~/dotfiles/.gitignore
+	*	1566508432	0
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/projects/ffcas/background.js
+	*	1566490625	0
+	"	27	4
+	.	17	7
+	+	9	0
+	+	17	0
+	+	48	7
+	+	17	7
+
+> ~/projects/ffcas/manifest.json
+	*	1566490144	0
+	"	4	13
+	.	4	13
+	+	4	13
+
 > ~/dotfiles/i3/swap.sh
-	*	1566487467	0
-	"	15	25
+	*	1566489688	0
+	"	8	3
 	^	15	26
-	.	15	26
+	.	8	11
 	+	13	16
 	+	12	26
 	+	11	0
@@ -447,6 +485,11 @@ $
 	+	8	11
 	+	12	63
 	+	15	26
+	+	8	11
+
+> ~/dotfiles/i3/sa
+	*	1566489648	0
+	"	1	0
 
 > ~/dotfiles/i3/config
 	*	1566487321	0

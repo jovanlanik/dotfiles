@@ -5,7 +5,7 @@
 
 SWAP_GAP=4
 SWAP_GAP_LARGE=32
-SWAP_SPEED=3
+SWAP_SPEED=1
 SWAP_WAIT=1.6
 
 i3-msg "mode \$drag"
