@@ -3,7 +3,7 @@
 # clean and simple
 
 exec_always	xrandr --output DP-1 --mode 1680x1050 --pos 0x150 --output DVI-D-1 --primary --mode 1920x1200 --pos 1680x0
-exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1
+exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1 -full ~/dotfiles/bg.png
 
 default_border		pixel 2
 default_floating_border normal 0
@@ -48,10 +48,14 @@ bindsym $mod+v	exec ~/.config/i3/swap.sh
 
 mode $drag {
 	bindsym --whole-window button1 mark swap; mode $drop
+	bindsym --whole-window button2 exec exit
+	bindsym --whole-window button3 exec exit
 }
 
 mode $drop {
 	bindsym --whole-window button1 swap container with mark swap; unmark swap
+	bindsym --whole-window button2 exec exit
+	bindsym --whole-window button3 exec exit
 }
 
 bindsym $mod+q	kill
