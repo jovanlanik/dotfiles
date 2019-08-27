@@ -4,9 +4,11 @@
 
 exec_always	xrandr --output DP-1 --mode 1680x1050 --pos 0x150 --output DVI-D-1 --primary --mode 1920x1200 --pos 1680x0
 exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1 -full ~/dotfiles/bg.png
+exec 		compton -b
 
 default_border		pixel 2
-default_floating_border normal 0
+default_floating_border normal 2
+for_window [class="9menu"] border pixel 2
 hide_edge_borders both
 gaps inner	+4
 gaps outer	-4
