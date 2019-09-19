@@ -8,7 +8,8 @@ compinit -d ~/.cache/zsh/zcompdump
 
 PROMPT="%F{1}%n %F{4}%M%f "
 typeset -U path
-path+=(~/bin)
+path+=(~/scripts)
+path+=(~/scripts/.hidden)
 export PATH
 export LS_COLORS="di=31:fi=34:ln=33:pi=0:so=0:bd=35:cd=35:or=0:mi=0:ex=32:*=34"
 zstyle ':completion:*'		group-name	''
