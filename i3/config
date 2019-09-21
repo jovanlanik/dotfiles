@@ -66,7 +66,7 @@ bindsym $mod+h	focus left
 bindsym $mod+j	focus down
 bindsym $mod+k	focus up
 bindsym $mod+l	focus right
-bindsym $mod+f	focus mode_toggle
+bindsym $mod+f	fullscreen
 bindsym $mod+s	split h
 bindsym $mod+d	split v
 bindsym $mod+1	workspace $ws1
