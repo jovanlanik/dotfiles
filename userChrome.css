@@ -1,0 +1,131 @@
+/* Hide unwanted things */
+#urlbar-results,
+#appMenu-open-file-button,
+#appMenu-save-file-button,
+#appMenu-print-button,
+#appMenu-print-button + toolbarseparator,
+#context-stop,
+#context-bookmarkpage,
+#context-navigation,
+#context-back,
+#context-forward,
+#context-reload,
+#context-pocket,
+#tabbrowser-tabs .tabbrowser-tab::before,
+#tabbrowser-tabs .tabbrowser-tab::after,
+#tabbrowser-tabs .tab-line,
+#tabbrowser-tabs .tab-close-button,
+#tabbrowser-tabs .tabs-newtab-button,
+#tabbrowser-tabs .tab-icon-sound,
+#tabbrowser-tabs .tab-icon-image,
+#urlbar .urlbar-history-dropmarker,
+#urlbar .urlbar-go-button,
+#PersonalToolbar .toolbarbutton-icon,
+#identity-box,
+#page-action-buttons,
+#wrapper-alltabs-button,
+#wrapper-new-tab-button,
+#wrapper-customizableui-special-spring1,
+#wrapper-customizableui-special-spring2 ,
+#alltabs-button ,
+#tabbrowser-tabs .tab-throbber {
+  display: none !important;
+}
+
+/* Fonts */
+#urlbar, #PersonalToolbar .bookmark-item, #tabbrowser-tabs .tab-label {
+  font-family: Dina !important;
+  font-size: 0.7rem !important;
+}
+
+/* Some borders */
+#navigator-toolbox {
+  border: none !important;
+}
+
+/* Navigation bar */
+#nav-bar toolbarbutton * {
+  border-radius: 0 !important;
+}
+
+#urlbar {
+  background: none !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+/* Bookmarks toolbar */
+#PersonalToolbar {
+  padding: 0px !important;
+  margin-bottom: 2px;
+  min-height: 18px !important;
+  height: 18px !important;
+}
+
+#PlacesToolbarItems {
+  -moz-box-pack: center !important;
+}
+
+#PersonalToolbar .bookmark-item {
+  margin: 0px !important;
+  padding: 0px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border-radius: 0px !important;
+  text-align: center !important;
+}
+
+/* Tabs */
+#tabbrowser-tabs,
+#tabbrowser-tabs .tabbrowser-arrowscrollbox {
+  min-height: 18px !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[last-visible-tab] {
+  margin-right: 18px !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab::after,
+#tabbrowser-tabs .tabbrowser-tab::before {
+  border: none !important;
+}
+
+#tabbrowser-tabs .tab-label {
+  -moz-box-flex: 1 !important;
+  line-height: 18px !important;
+  text-align: center !important;
+}
+
+#tabbrowser-tabs .tab-background {
+  border: none !important;
+}
+
+#tabbrowser-tabs  .tabbrowser-arrowscrollbox .scrollbutton-up,
+#tabbrowser-tabs  .tabbrowser-arrowscrollbox .scrollbutton-down ,
+#tabbrowser-tabs  .tabbrowser-arrowscrollbox .scrollbutton-up  *,
+#tabbrowser-tabs  .tabbrowser-arrowscrollbox .scrollbutton-down  * {
+  min-height: 18px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  width: 18px !important;
+}
+
+#clean_simple_clock-browser-action {
+  height: 18px !important;
+  margin: 0 !important;
+}
+
+#clean_simple_clock-browser-action  .toolbarbutton-badge-stack {
+  display: none !important;
+}
+
+#clean_simple_clock-browser-action > .toolbarbutton-text {
+  all: unset !important;
+  display: -moz-box !important;
+  padding: 0 2px !important;
+  font-family: Dina !important;
+  font-size: 0.7rem !important;
+  pointer-events: none !important;
+}
