@@ -5,6 +5,7 @@
 
 exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1 -full ~/dotfiles/bg.png
 exec 		compton -b
+exec		dunst
 
 default_border		pixel 2
 default_floating_border normal 2

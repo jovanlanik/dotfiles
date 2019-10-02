@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "x8"
+    geometry = "0x8-8+8"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -81,15 +81,15 @@
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
     # Transient notifications ignore this setting.
-    idle_threshold = 120
+    idle_threshold = 0
 
     ### Text ###
 
-    font = Dina 10
+    font = Dina 7.5
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 8
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -113,7 +113,7 @@
     #
     # It's important to note that markup inside the format option will be parsed
     # regardless of what this is set to.
-    markup = full
+    markup = no
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -125,7 +125,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<u>%s from %a</u>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -148,13 +148,13 @@
     ignore_newline = no
 
     # Merge multiple notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of merged notifications with the same content
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -162,7 +162,7 @@
     icon_position = off
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 0
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -228,19 +228,19 @@
     # Xev might be helpful to find names for keys.
 
     # Close notification.
-    close = ctrl+space
+    close = mod4+comma
 
     # Close all notifications.
-    close_all = ctrl+shift+space
+    close_all = mod4+period
 
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    history = mod4+slash
 
     # Context menu.
-    context = ctrl+shift+period
+    context = mod4+shift+slash
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -256,7 +256,7 @@
     background = "#0c0c0c"
     foreground = "#f5f5f5"
     frame_color = "#2c66c9"
-    timeout = 10
+    timeout = 15
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
