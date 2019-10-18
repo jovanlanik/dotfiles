@@ -35,6 +35,14 @@ function become()
 	fi
 }
 
+function _become()
+{
+	_arguments -s -S -A '-*' : \
+		'*:: : _normal'
+}
+
+compdef _become become
+
 alias q="exit"
 alias ls="ls --color=auto"
 alias la="ls -a"
