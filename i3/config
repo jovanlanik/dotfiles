@@ -3,6 +3,7 @@
 # www.github.com/jovanlanik
 # clean and simple
 
+exec_always	xrandr --output DP-1 --mode 1680x1050 --pos 0x150 --output DVI-D-1 --primary --mode 1920x1200 --pos 1680x0
 exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1 -full ~/dotfiles/bg.png
 exec 		compton -b
 exec		dunst
@@ -32,6 +33,13 @@ set $ws3	"3"
 set $ws4	"4"
 set $ws5	"5"
 set $ws6	"6"
+
+workspace $ws1 output	DVI-D-1
+workspace $ws2 output	DVI-D-1
+workspace $ws3 output	DVI-D-1
+workspace $ws4 output	DP-1
+workspace $ws5 output	DP-1
+workspace $ws6 output	DP-1
 
 floating_modifier $mod
 
