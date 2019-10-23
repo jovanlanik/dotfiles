@@ -19,6 +19,14 @@ zstyle ':completion:*:commands'	list-colors	'=*=32'
 zstyle ':completion:*:aliases'	list-colors	'=*=33'
 zstyle ':completion:*:builtins'	list-colors	'=*=36'
 
+function quick-complete-word
+{
+	zle list-choices
+	zle complete-word
+}
+zle -N quick-complete-word
+bindkey "^[[Z" quick-complete-word
+
 function become()
 {
 	if command -v $1
