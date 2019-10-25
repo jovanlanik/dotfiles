@@ -195,7 +195,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x0c0c0c'
+    black:   '0x1f1f1f'
     red:     '0xc92c66'
     green:   '0x66c92c'
     yellow:  '0xc98f2c'
@@ -220,7 +220,7 @@ colors:
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
   dim:
-    black:   '0x000000'
+    black:   '0x1f1f1f'
     red:     '0x641632'
     green:   '0x326416'
     yellow:  '0x644816'
