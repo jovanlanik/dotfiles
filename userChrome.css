@@ -1,5 +1,4 @@
 /* Hide unwanted things */
-#urlbar-results,
 #appMenu-open-file-button,
 #appMenu-save-file-button,
 #appMenu-print-button,
@@ -19,9 +18,11 @@
 #tabbrowser-tabs .tab-icon-sound,
 #tabbrowser-tabs .tab-icon-image,
 #urlbar .urlbar-history-dropmarker,
-#urlbar .urlbar-go-button,
+#urlbar-go-button,
+#urlbar .urlbarView,
 #PersonalToolbar .toolbarbutton-icon,
 #identity-box,
+#tracking-protection-icon-container,
 #page-action-buttons,
 #wrapper-alltabs-button,
 #wrapper-new-tab-button,
@@ -53,12 +54,19 @@
   margin: 0 !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+#urlbar-container {
+  padding: 0 !important;
+}
+
+#urlbar-input {
   text-align: center !important;
 }
 
 /* Bookmarks toolbar */
 #PersonalToolbar {
-  padding: 0px !important;
+  padding: 0 !important;
   margin-bottom: 2px;
   min-height: 18px !important;
   height: 18px !important;
@@ -69,11 +77,11 @@
 }
 
 #PersonalToolbar .bookmark-item {
-  margin: 0px !important;
-  padding: 0px !important;
+  margin: 0 !important;d
+  padding: 0 !important;
   padding-left: 8px !important;
   padding-right: 8px !important;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   text-align: center !important;
 }
 
