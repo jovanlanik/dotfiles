@@ -120,6 +120,10 @@
   width: 18px !important;
 }
 
+.tab-label-container[textoverflow][labeldirection="ltr"]:not([pinned]), .tab-label-container[textoverflow]:not([labeldirection]):not([pinned]):-moz-locale-dir(ltr) {
+	mask-image: linear-gradient(to left, transparent, black 1em) !important;
+}
+
 #clean_simple_clock-browser-action {
   height: 18px !important;
   margin: 0 !important;
