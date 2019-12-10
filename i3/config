@@ -5,7 +5,7 @@
 
 exec_always	xrandr	--output LVDS1 --primary --mode 1920x1080 --pos 0x0
 exec		hsetroot -add '#c92c66' -add '#c98f2c' -gradient 1 -full ~/dotfiles/bg.png
-exec 		compton -b
+exec 		picom -b
 exec		dunst
 exec		~/.config/i3/xob.sh
 
