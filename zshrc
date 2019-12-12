@@ -11,6 +11,7 @@ typeset -U path
 path+=(~/scripts)
 path+=(~/scripts/.hidden)
 export PATH
+bindkey -e
 export EDITOR="vim"
 export PAGER="less"
 export LS_COLORS="di=31:fi=34:ln=33:pi=0:so=0:bd=35:cd=35:or=0:mi=0:ex=32:*=34"
