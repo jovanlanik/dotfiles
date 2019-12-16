@@ -14,7 +14,7 @@ default_floating_border normal 2
 hide_edge_borders both
 gaps inner	+4
 gaps outer	-4
-font pango:Dina 7.5
+font Dina 7.5
 title_align center
 
 client.focused		#0c0c0c #0c0c0c #f5f5f5 #0c0c0c

@@ -29,7 +29,8 @@
 #wrapper-customizableui-special-spring1,
 #wrapper-customizableui-special-spring2 ,
 #alltabs-button ,
-#tabbrowser-tabs .tab-throbber {
+#tabbrowser-tabs .tab-throbber,
+#statuspanel {
   display: none !important;
 }
 
