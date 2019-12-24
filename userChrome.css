@@ -46,10 +46,19 @@
 }
 
 /* Navigation bar */
-#nav-bar toolbarbutton * {
-  border-radius: 0 !important;
+#nav-bar {
+  border-radius: 4px 4px 0 0 !important;
 }
 
+#nav-bar toolbarbutton {
+  padding: 0 !important;
+}
+
+#nav-bar toolbarbutton * {
+  border-radius: 4px !important;
+}
+
+/* URL bar */
 #urlbar {
   background: none !important;
   margin: 0 !important;
@@ -82,7 +91,7 @@
   padding: 0 !important;
   padding-left: 8px !important;
   padding-right: 8px !important;
-  border-radius: 0 !important;
+  border-radius: 4px 4px 0px 0 !important;
   text-align: center !important;
 }
 
@@ -90,6 +99,10 @@
 #tabbrowser-tabs,
 #tabbrowser-tabs .tabbrowser-arrowscrollbox {
   min-height: 18px !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab[first-visible-tab] {
+  margin-left: 4px !important;
 }
 
 #tabbrowser-tabs .tabbrowser-tab[last-visible-tab] {
@@ -109,6 +122,54 @@
 
 #tabbrowser-tabs .tab-background {
   border: none !important;
+  border-radius: 4px 4px 0 0;
+}
+
+tab:hover:not([visuallyselected]) .tab-background {
+  background-color: #1f1f1f !important;
+}
+
+#tabbrowser-tabs .tab-background::before,
+#tabbrowser-tabs .tab-background::after
+{
+	content: "" !important;
+	display: block !important;
+	position: absolute !important;
+	width: 4px !important;
+	height: 4px !important;
+	bottom: 0 !important;
+	pointer-events: none !important;
+}
+
+tab
+{
+  --bottom-round: rgba(0, 0, 0, 0) !important;  
+}
+
+tab[visuallyselected]
+{
+  --bottom-round: var(--toolbar-bgcolor) !important;
+}
+
+tab:hover:not([visuallyselected])
+{
+  --bottom-round: #1f1f1f !important;
+}
+
+tab .tab-background::before
+{
+	border-bottom-right-radius: 4px !important;
+	left: 0 !important;
+	transform: translateX(-4px) !important;
+	box-shadow: 4px 4px 0 4px var(--bottom-round) !important;
+}
+
+tab .tab-background::after
+{
+	border-bottom-left-radius: 4px !important;
+	right: 0 !important;
+	transform: translateX(4px) !important;
+	box-shadow: -4px 4px 0 4px var(--bottom-round) !important;
 }
 
 #tabbrowser-tabs  .tabbrowser-arrowscrollbox .scrollbutton-up,
@@ -125,6 +186,7 @@
 	mask-image: linear-gradient(to left, transparent, black 1em) !important;
 }
 
+/* Clock extension */
 #clean_simple_clock-browser-action {
   height: 18px !important;
   margin: 0 !important;
@@ -138,7 +200,9 @@
   all: unset !important;
   display: -moz-box !important;
   padding: 0 2px !important;
+  margin-left: 2px !important;
   font-family: Dina !important;
   font-size: 0.7rem !important;
   pointer-events: none !important;
 }
+
