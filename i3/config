@@ -28,6 +28,7 @@ set $terminal	alacritty
 set $browser	firefox
 set $torrent	transmission-gtk
 
+set $wsn	exec killall dunst;exec notify-send -t 300 workspace
 set $ws1	"1"
 set $ws2	"2"
 set $ws3	"3"
@@ -63,12 +64,12 @@ bindsym $mod+l	focus right
 bindsym $mod+f	fullscreen
 bindsym $mod+s	split h
 bindsym $mod+d	split v
-bindsym $mod+1	workspace $ws1
-bindsym $mod+2	workspace $ws2
-bindsym $mod+3	workspace $ws3
-bindsym $mod+4	workspace $ws4
-bindsym $mod+5	workspace $ws5
-bindsym $mod+6	workspace $ws6
+bindsym $mod+1	$wsn $ws1;workspace $ws1
+bindsym $mod+2	$wsn $ws2;workspace $ws2
+bindsym $mod+3	$wsn $ws3;workspace $ws3
+bindsym $mod+4	$wsn $ws4;workspace $ws4
+bindsym $mod+5	$wsn $ws5;workspace $ws5
+bindsym $mod+6	$wsn $ws6;workspace $ws6
 
 bindsym $mod+Shift+h	move left
 bindsym $mod+Shift+j	move down
@@ -85,5 +86,5 @@ bindsym $mod+Shift+5	move container to workspace $ws5
 bindsym $mod+Shift+6	move container to workspace $ws6
 
 bindsym $mod+Shift+r	restart
-bindsym $mod+Shift+e	exec i3-msg exit
+bindsym $mod+Shift+e	exit
 
