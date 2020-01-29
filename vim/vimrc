@@ -4,6 +4,7 @@
 
 set nocompatible
 set number
+highlight LineNr ctermfg=cyan
 set autoindent
 set viminfo+=n~/.vim/viminfo
 syntax on
