@@ -1,2 +1,2 @@
-vim/
-!vim/vimrc
+./vim/*
+!./vim/vimrc
