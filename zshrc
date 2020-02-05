@@ -36,9 +36,16 @@ function become()
 	then
 		if test $DISPLAY
 		then
-			i3-msg 'exec '$*
-			exit
+			COMM="exec $1"
+			for i in $(seq 2 $#)
+			do
+				eval NEW=\"\$\{$i\}\"
+				COMM+=" $(echo -e $NEW | sed 's/\ /\\ /g')"
+			done
+			i3-msg $COMM
+			#exit
 		else
+			printf $*
 			exec $*
 		fi
 	else
@@ -54,6 +61,7 @@ function _become()
 
 compdef _become become
 
+alias be="become"
 alias q="exit"
 alias ls="ls --color=auto"
 alias la="ls -a"
