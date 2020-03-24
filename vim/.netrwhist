@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/lanikjo/.config/dunst'
-let g:netrw_dirhist_3='/etc/sv/wpa_cli-action'
-let g:netrw_dirhist_2='/etc/sv/wpa_cli-action/supervise'
-let g:netrw_dirhist_1='/etc/sv/wpa_cli-action'

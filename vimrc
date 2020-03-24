@@ -10,3 +10,9 @@ set autoindent
 set viminfo+=n~/.vim/viminfo
 syntax on
 cmap ` w !sudo tee > /dev/null %
+
+set directory=~/.cache/vim,/tmp
+set backupdir=~/.cache/vim,/tmp
+set viminfo+=n~/.cache/vim/viminfo
+set runtimepath=~/.local/share/vim,$VIM,$VIMRUNTIME
+let g:netrw_home='~/.cache/vim'
