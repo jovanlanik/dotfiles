@@ -3,15 +3,12 @@
 # www.github.com/jovanlanik
 # clean and simple
 
-SWAP_GAP=4
-SWAP_GAP_LARGE=32
-SWAP_SPEED=1
 SWAP_WAIT=1.6
 
 i3-msg "mode \$drag"
-~/.config/i3/gap_scale.py $SWAP_GAP $SWAP_GAP_LARGE $SWAP_SPEED 0
+i3-msg "gaps inner all set 16"
 sleep $SWAP_WAIT
 i3-msg "mode default"
-~/.config/i3/gap_scale.py $SWAP_GAP $SWAP_GAP_LARGE $SWAP_SPEED 1
+i3-msg "gaps inner all set 4"
 i3-msg unmark swap
 

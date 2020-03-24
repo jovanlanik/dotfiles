@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: none
+  decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -127,7 +127,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 5
+  size: 7.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -181,8 +181,8 @@ colors:
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   #cursor:
-  #  text: '0x000000'
-  #  cursor: '0xffffff'
+    #text: '0x000000'
+    #cursor: '0xffffff'
 
   # Normal colors
   normal:
@@ -334,7 +334,7 @@ cursor:
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  unfocused_hollow: true
+  unfocused_hollow: false
 
 # Live config reload (changes require restart)
 live_config_reload: true

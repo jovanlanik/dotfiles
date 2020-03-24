@@ -14,6 +14,7 @@ export PATH
 bindkey -e
 export EDITOR="vim"
 export PAGER="less"
+export LESSHISTFILE=-
 export LS_COLORS="di=31:fi=34:ln=33:pi=0:so=0:bd=35:cd=35:or=0:mi=0:ex=32:*=34"
 zstyle ':completion:*'		group-name	''
 zstyle ':completion:*'		format		"%F{7}%d%f"
@@ -36,16 +37,15 @@ function become()
 	then
 		if test $DISPLAY
 		then
-			COMM="exec $1"
-			for i in $(seq 2 $#)
+			COMM="exec"
+			for i in $(seq 1 $#)
 			do
 				eval NEW=\"\$\{$i\}\"
 				COMM+=" $(echo -e $NEW | sed 's/\ /\\ /g')"
 			done
 			i3-msg $COMM
-			#exit
+			exit
 		else
-			printf $*
 			exec $*
 		fi
 	else
@@ -63,6 +63,7 @@ compdef _become become
 
 alias be="become"
 alias q="exit"
+alias sudo="sudo -E"
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias lh="ls -d .*"

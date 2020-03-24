@@ -23,14 +23,14 @@
 #PersonalToolbar .toolbarbutton-icon,
 #identity-box,
 #tracking-protection-icon-container,
-#page-action-buttons,
 #wrapper-alltabs-button,
 #wrapper-new-tab-button,
 #wrapper-customizableui-special-spring1,
-#wrapper-customizableui-special-spring2 ,
-#alltabs-button ,
+#wrapper-customizableui-special-spring2,
+#alltabs-button,
 #tabbrowser-tabs .tab-throbber,
-#statuspanel {
+#statuspanel,
+#webrtcIndicator {
   display: none !important;
 }
 
