@@ -1,0 +1,70 @@
+
+scrollbar {
+	background-color: #f5f5f5;
+	border: none;
+}
+
+scrollbar * {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+scrollbar slider {
+	background-color: #7a7a7a;
+	border-radius: 0;
+	padding: 1px;
+	margin: 2px;
+}
+
+scrollbar.horizontal slider {
+	border-radius: 4px 4px 0 0;
+	margin-bottom: 0;
+}
+
+scrollbar.vertical slider {
+	border-radius: 4px 0 0 4px;
+	margin-right: 0;
+}
+
+scrollbar slider:hover {
+	background-color: #5684d3;
+}
+
+scrollbar slider:hover:active {
+	background-color: #2c66c9;
+}
+
+menubar {
+	box-shadow: none;
+	background-color: #0c0c0c;
+	color: #f5f5f5;
+	font-family: 'Dina';
+	font-size: 0.7rem;
+}
+
+menubar > menuitem {
+	background-color: #f5f5f5;
+	color: #0c0c0c;
+	min-height: 18px;
+	padding: 0 8px;
+}
+
+menubar > menuitem:first-child {
+	border-radius: 4px 0 0 0;	
+}
+
+menubar > menuitem:last-child {
+	border-radius: 0 4px 0 0;
+}
+
+menubar menu {
+	font-family: initial;
+	font-size: initial;
+}
+
+headerbar {
+	background: none;
+	background-color: #f5f5f5;
+	border-radius: 4px 4px 0 0;
+}
