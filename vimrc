@@ -14,5 +14,5 @@ cmap ` w !sudo tee > /dev/null %
 set directory=~/.cache/vim,/tmp
 set backupdir=~/.cache/vim,/tmp
 set viminfo+=n~/.cache/vim/viminfo
-set runtimepath=~/.local/share/vim,$VIM,$VIMRUNTIME
+set runtimepath=$HOME/.local/share/vim,$HOME/.local/share/vim/after,$VIM,$VIMRUNTIME
 let g:netrw_home='~/.cache/vim'
