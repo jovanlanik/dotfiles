@@ -1,7 +1,6 @@
 !/bin/sh
-if	cat /proc/acpi/bbswitch | grep ON && \
-	cat /proc/modules | cut -d ' ' -f 1 | grep nouveau && \
-	lsusb | grep "17ef:100a";
+if	lsmod | grep -q 'nouveau' && \
+	lsusb | grep -q '17ef:100a'
 then
 	xrandr --setprovideroutputsource nouveau Intel
 	xrandr --output LVDS1 --mode 1920x1080 --rate 60 --pos 0x120 \

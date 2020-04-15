@@ -1,0 +1,11 @@
+#!/bin/sh
+if	lsmod | grep -q 'nouveau' && \
+	lsusb | grep -q '17ef:100a'
+then
+	export XORGCONFIG='xorg.tempdocked.conf'
+fi
+if [ -z "$XDG_VTNR" ]; then
+	exec /usr/bin/X -nolisten tcp "$@"
+else
+	exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR
+fi
