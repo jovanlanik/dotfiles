@@ -1,4 +1,5 @@
 /* Hide unwanted things */
+#window-controls,
 #appMenu-open-file-button,
 #appMenu-save-file-button,
 #appMenu-print-button,
@@ -17,9 +18,9 @@
 #tabbrowser-tabs .tabs-newtab-button,
 #tabbrowser-tabs .tab-icon-sound,
 #tabbrowser-tabs .tab-icon-image,
+#urlbar-background,
 #urlbar .urlbar-history-dropmarker,
 #urlbar-go-button,
-#urlbar .urlbarView,
 #PersonalToolbar .toolbarbutton-icon,
 #identity-box,
 #tracking-protection-icon-container,
@@ -74,12 +75,38 @@
   text-align: center !important;
 }
 
+#urlbar .urlbarView {
+  display: none !important;
+  /*
+  font-family: sans !important;
+  font-size: 1rem !important;
+  transform: translateY(17px) !important;
+  background-color: white !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+  */
+}
+
+/*
+#urlbar .urlbarView-body-outer {
+  padding: 0 6px !important;
+}
+
+#urlbar .urlbarView-body-inner {
+  border: none !important;
+}
+*/
+
 /* Bookmarks toolbar */
 #PersonalToolbar {
   padding: 0 !important;
-  margin-bottom: 2px;
+  padding-bottom: 1px !important;
+  box-shadow: 0 -1px 0px rgba(0,0,0,0.15) inset !important;
   min-height: 18px !important;
   height: 18px !important;
+}
+
+#navigator-toolbox[inFullscreen] #PersonalToolbar{
+ visibility: visible !important;
 }
 
 #PlacesToolbarItems {
