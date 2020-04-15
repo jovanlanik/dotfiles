@@ -1,3 +1,8 @@
+/*
+// Jovan Lanik's GTK+3 Stylesheet
+// www.github.com/jovanlanik
+// clean and simple
+*/
 
 scrollbar {
 	background-color: #f5f5f5;
@@ -44,18 +49,9 @@ menubar {
 }
 
 menubar > menuitem {
-	background-color: #f5f5f5;
-	color: #0c0c0c;
+	color: #f5f5f5;
 	min-height: 18px;
 	padding: 0 8px;
-}
-
-menubar > menuitem:first-child {
-	border-radius: 4px 0 0 0;	
-}
-
-menubar > menuitem:last-child {
-	border-radius: 0 4px 0 0;
 }
 
 menubar menu {
@@ -66,5 +62,4 @@ menubar menu {
 headerbar {
 	background: none;
 	background-color: #f5f5f5;
-	border-radius: 4px 4px 0 0;
 }
