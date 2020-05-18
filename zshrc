@@ -32,26 +32,13 @@ zstyle ':completion:*:commands'	list-colors	'=*=32'
 zstyle ':completion:*:aliases'	list-colors	'=*=33'
 zstyle ':completion:*:builtins'	list-colors	'=*=36'
 
-function greh()
-{
-	test -z "$C" && c="3"
-	GREP_COLORS="ms=0;3$c" grep --color=always -E "$1|\$" ${@:2}
-}
-function manh() { man ${@:2} | greh $1 | less }
-
 function become()
 {
 	if command -v $1
 	then
 		if test $DISPLAY
 		then
-			COMM="exec"
-			for i in $(seq 1 $#)
-			do
-				eval NEW=\"\$\{$i\}\"
-				COMM+=" $(echo -e $NEW | sed 's/\ /\\ /g')"
-			done
-			i3-msg $COMM
+			$* & disown
 			exit
 		else
 			exec $*
