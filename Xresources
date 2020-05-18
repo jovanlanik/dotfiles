@@ -2,10 +2,10 @@
 // www.github.com/jovanlanik
 // clean and simple
 
-#if WIDTH > 1920
-i3.output.1: DP-1-2
-i3.output.2: LVDS1
-i3.compositor: false
+#if HEIGHT > 1080
+i3.output.1: DVI-D-0
+i3.output.2: DVI-D-0
+i3.compositor: picom -b
 #else
 i3.compositor: picom -b
 #endif

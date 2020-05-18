@@ -1,11 +1,11 @@
 #!/bin/sh
-if	lsmod | grep -q 'nouveau' && \
-	lsusb | grep -q '17ef:100a'
+if lspci -n | grep -q "1002:67df"
 then
-	export XORGCONFIG='xorg.tempdocked.conf'
+	export XORGCONFIG='xorg.external.conf'
 fi
+
 if [ -z "$XDG_VTNR" ]; then
-	exec /usr/bin/X -nolisten tcp "$@"
+	exec /usr/bin/X -nolisten tcp -config $XORGCONFIG "$@"
 else
-	exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR
+	exec /usr/bin/X -nolisten tcp -config $XORGCONFIG "$@" vt$XDG_VTNR
 fi
