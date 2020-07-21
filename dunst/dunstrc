@@ -290,6 +290,7 @@
 [workspace]
      summary = "workspace"
      format = "%b"
+     timeout = 1
 
 #[espeak]
 #    summary = "*"
