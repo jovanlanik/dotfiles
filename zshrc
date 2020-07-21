@@ -8,8 +8,7 @@ compinit -d ~/.cache/zsh/zcompdump
 
 PROMPT="%F{1}%n %F{4}%M%f "
 typeset -U path
-path+=(~/scripts)
-path+=(~/scripts/.hidden)
+path+=(~/.local/bin)
 export PATH
 bindkey -e
 export EDITOR="vim"
@@ -54,8 +53,9 @@ compdef _become become
 
 alias be="become"
 alias q="exit"
-alias sudo="sudo -E"
-alias grec="grep --color=always"
+alias sudo="sudo -E "
+alias watch="watch -tcn1 "
+alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias lh="ls -d .*"
