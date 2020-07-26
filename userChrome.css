@@ -52,6 +52,24 @@
   border: none !important;
 }
 
+/* Menu bar */
+#toolbar-menubar:not([inactive]) {
+  margin-bottom: -1px !important;
+  min-height: 18px !important;
+}
+
+#main-menubar > menu {
+  all: unset !important;
+  font-family: Dina !important;
+  font-size: 0.7rem !important;
+  padding: 0 8px !important;
+  border-bottom: solid 3px transparent !important;
+}
+
+#main-menubar > menu[open] {
+  border-bottom-color: Highlight !important;
+}
+
 /* Navigation bar */
 #nav-bar {
   box-shadow: none !important;
