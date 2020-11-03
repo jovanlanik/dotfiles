@@ -2,18 +2,19 @@
 # www.github.com/jovanlanik
 # clean and simple
 
+[ -z "$XDG_CACHE_HOME" ] && XDG_CACHE_HOME="$HOME/.cache"
+[ -z "$XDG_DATA_HOME" ] && XDG_DATA_HOME="$HOME/.local/share"
+
 autoload -Uz compinit
-mkdir -p ~/.cache/zsh
-compinit -d ~/.cache/zsh/zcompdump
+mkdir -p "$XDG_CACHE_HOME/zsh"
+compinit -d "$XDG_CACHE_HOME/zsh"
+bindkey -e
 
 PROMPT="%F{1}%n %F{4}%M%f "
-HISTFILE=~/.cache/zsh/history
+HISTFILE="$XDG_DATA_HOME/zsh/history"
 HISTSIZE=1000
 SAVEHIST=1000
-typeset -U path
-path+=(~/.local/bin)
-export PATH
-bindkey -e
+export PATH="${PATH:+$PATH:}$HOME/.local/bin"
 export EDITOR="vim"
 export PAGER="less"
 export LESS="-R"
@@ -25,6 +26,7 @@ export LESS_TERMCAP_se=$'\C-[[0m'
 export LESS_TERMCAP_so=$'\C-[[01m'
 export LESS_TERMCAP_ue=$'\C-[[0m'
 export LESS_TERMCAP_us=$'\C-[[0;34m'
+export LESS_TERMCAP_zz=$'\C-[[0m'
 export GREP_COLORS='ms=0;33'
 export LS_COLORS="di=31:fi=34:ln=33:pi=0:so=0:bd=35:cd=35:or=0:mi=0:ex=32:*=34"
 zstyle ':completion:*'		group-name	''
@@ -51,7 +53,6 @@ function become()
 }
 
 function _become() { _arguments -s -S -A '-*' : '*:: : _normal' }
-
 compdef _become become
 
 alias be="become"
