@@ -1,0 +1,2 @@
+event=button/volume*
+action=~/.config/acpi/vol.sh %e

@@ -7,6 +7,9 @@ mkdir -p ~/.cache/zsh
 compinit -d ~/.cache/zsh/zcompdump
 
 PROMPT="%F{1}%n %F{4}%M%f "
+HISTFILE=~/.cache/zsh/history
+HISTSIZE=1000
+SAVEHIST=1000
 typeset -U path
 path+=(~/.local/bin)
 export PATH

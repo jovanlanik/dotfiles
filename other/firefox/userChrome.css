@@ -37,14 +37,16 @@
 #alltabs-button,
 #tabbrowser-tabs .tab-throbber,
 #statuspanel,
-#webrtcIndicator {
+#webrtcIndicator,
+#pageActionSeparator,
+#userContext-label {
   display: none !important;
 }
 
 /* Fonts */
 #urlbar, #PersonalToolbar .bookmark-item, #tabbrowser-tabs .tab-label {
   font-family: Dina !important;
-  font-size: 0.7rem !important;
+  font-size: 11px !important;
 }
 
 /* Some borders */
@@ -61,7 +63,7 @@
 #main-menubar > menu {
   all: unset !important;
   font-family: Dina !important;
-  font-size: 0.7rem !important;
+  font-size: 11px !important;
   padding: 0 8px !important;
   border-bottom: solid 3px transparent !important;
 }
@@ -77,10 +79,6 @@
 }
 
 #nav-bar toolbarbutton {
-  padding: 0 !important;
-}
-
-#nav-bar toolbarbutton * {
   border-radius: var(--ui-radius) !important;
 }
 
@@ -94,6 +92,9 @@
 
 #urlbar-container {
   padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0px !important;
+  height: 4px !important;
 }
 
 #urlbar-input {
@@ -120,6 +121,10 @@
   border: none !important;
 }
 */
+
+#userContext-icons {
+  opacity: 0.5 !important;
+}
 
 /* Bookmarks toolbar */
 #PersonalToolbar {
@@ -195,7 +200,8 @@ tab:hover:not([visuallyselected]) .tab-background {
 
 tab
 {
-  --bottom-round: rgba(0, 0, 0, 0) !important;  
+  --bottom-round: rgba(0, 0, 0, 0) !important;
+  --identity-tab-color: unset !important;
 }
 
 tab[visuallyselected]

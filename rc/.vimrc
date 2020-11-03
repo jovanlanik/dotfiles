@@ -9,7 +9,6 @@ highlight LineNr ctermfg=cyan
 set autoindent
 set viminfo+=n~/.vim/viminfo
 syntax on
-cmap ` w !sudo tee > /dev/null %
 
 set directory=~/.cache/vim,/tmp
 set backupdir=~/.cache/vim,/tmp

@@ -1,0 +1,2 @@
+event=video/switchmode
+action=xset dpms force off

@@ -40,12 +40,14 @@ scrollbar slider:hover:active {
 	background-color: #2c66c9;
 }
 
+undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
+
 menubar {
 	box-shadow: none;
 	background-color: #0c0c0c;
 	color: #f5f5f5;
 	font-family: 'Dina';
-	font-size: 0.7rem;
+	font-size: 11px;
 }
 
 menubar > menuitem {

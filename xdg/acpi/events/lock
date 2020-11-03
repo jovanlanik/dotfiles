@@ -1,0 +1,2 @@
+event=button/screenlock
+action=physlock -d -p "Locked ($USER@$(hostname))"

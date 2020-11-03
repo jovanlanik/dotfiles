@@ -1,0 +1,2 @@
+event=button/f20
+action=pulsemixer --id source-1 --toggle-mute

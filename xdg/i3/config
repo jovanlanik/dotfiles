@@ -3,14 +3,10 @@
 # www.github.com/jovanlanik
 # clean and simple
 
-set_from_resource $compositor i3.compositor false
-set_from_resource $output1 i3.output.1 LVDS1
-set_from_resource $output2 i3.output.2 LVDS1
+#set_from_resource $output1 i3.output.1 LVDS1
+#set_from_resource $output2 i3.output.2 LVDS1
 
-exec --no-startup-id xfsettingsd --replace --no-daemon
-exec --no-startup-id ~/dotfiles/bg.sh
-exec --no-startup-id $compositor
-exec --no-startup-id dunst
+exec_always --no-startup-id exec autotiling
 
 default_border pixel 2
 default_floating_border pixel 2
@@ -18,11 +14,9 @@ hide_edge_borders both
 gaps inner +4
 gaps outer -4
 font pango:Dina 7.5
-#font -windows-dina-medium-r-normal--10-80-96-96-c-70-iso8859-1
-#title_align center
-#for_window [class="."] title_format " "
-for_window [con_mark="new"] floating enable
 for_window [window_role="About"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="wip"] floating enable
 
 client.focused #000000 #0c0c0c #f5f5f5 #000000 #000000
 client.focused_inactive #0c0c0c #0c0c0c #f5f5f5 #000000 #000000
@@ -31,14 +25,15 @@ client.urgent #000000 #0c0c0c #f5f5f5 #000000 #000000
 
 set $mod mod4
 
+set $launch launchar
 set $terminal alacritty
-set $browser apulse firefox
+set $browser firefox
 set $fileman thunar
 set $torrent transmission-gtk
 set $modeling blender
 set $image gimp
 set $vector inkscape
-set $settings xfce4-settings-manager
+set $pulse pavucontrol
 
 set $wsn exec dunstify -r 10551 workspace
 set $ws1 "1"
@@ -48,23 +43,24 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 
-workspace $ws1 output $output1
-workspace $ws2 output $output1
-workspace $ws3 output $output1
-workspace $ws4 output $output2
-workspace $ws5 output $output2
-workspace $ws6 output $output2
+#workspace $ws1 output $output1
+#workspace $ws2 output $output1
+#workspace $ws3 output $output1
+#workspace $ws4 output $output2
+#workspace $ws5 output $output2
+#workspace $ws6 output $output2
 
 floating_modifier $mod
 
-bindsym $mod+t exec $terminal
-bindsym $mod+b exec $browser
-bindsym $mod+r exec $fileman
-bindsym $mod+c exec $torrent
-bindsym $mod+m exec $modeling
-bindsym $mod+i exec $image
-bindsym $mod+v exec $vector
-bindsym $mod+x exec $settings
+bindsym $mod+x exec exec $launch
+bindsym $mod+t exec exec $terminal
+bindsym $mod+b exec exec $browser
+bindsym $mod+r exec exec $fileman
+bindsym $mod+c exec exec $torrent
+bindsym $mod+m exec exec $modeling
+bindsym $mod+i exec exec $image
+bindsym $mod+v exec exec $vector
+bindsym $mod+p exec exec $pulse
 
 bindsym $mod+z exec ~/dotfiles/swap.sh
 
@@ -110,5 +106,5 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exit
+bindsym $mod+Shift+e exec sh -c 'kill -HUP $EXIT'
 
