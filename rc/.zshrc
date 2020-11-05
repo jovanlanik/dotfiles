@@ -56,6 +56,7 @@ function _become() { _arguments -s -S -A '-*' : '*:: : _normal' }
 compdef _become become
 
 alias be="become"
+alias usv="SVDIR=~/.local/service sv"
 alias q="exit"
 alias sudo="sudo -E "
 alias watch="watch -tcn1 "

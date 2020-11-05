@@ -85,7 +85,7 @@
 
     ### Text ###
 
-    font = Dina 7.5
+    font = Dina 11px
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -125,7 +125,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<u>%s from %a</u>\n%b"
+    format = "<b>%s from %a</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".

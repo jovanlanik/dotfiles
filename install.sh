@@ -3,7 +3,11 @@
 
 linkdot()
 {
-	[ ! -e $2 ] && ln -s $1 $2
+	if [ ! -e $2 ]
+	then
+		echo "Linking $1 to $2"
+		ln -s $1 $2
+	fi
 }
 
 mlink()
@@ -26,7 +30,7 @@ do
 done
 
 # other
-linkdot $DOTFILES/other/pulse/default.pa $XDG_CONFIG_HOME/pulse/
+linkdot "$DOTFILES/other/pulse/default.pa" "$XDG_CONFIG_HOME/pulse/default.pa"
 mlink "$DOTFILES/other/userChrome.css"
 mlink "$DOTFILES/other/userContent.css"
 

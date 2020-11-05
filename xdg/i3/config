@@ -3,16 +3,13 @@
 # www.github.com/jovanlanik
 # clean and simple
 
-#set_from_resource $output1 i3.output.1 LVDS1
-#set_from_resource $output2 i3.output.2 LVDS1
-
 exec_always --no-startup-id exec autotiling
 
 default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders both
-gaps inner +4
-gaps outer -4
+gaps inner +2
+gaps outer -2
 font pango:Dina 7.5
 for_window [window_role="About"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -62,7 +59,7 @@ bindsym $mod+i exec exec $image
 bindsym $mod+v exec exec $vector
 bindsym $mod+p exec exec $pulse
 
-bindsym $mod+z exec ~/dotfiles/swap.sh
+bindsym $mod+z exec ~/dotfiles/bin/swap.sh
 
 mode $drag {
 	bindsym --whole-window button1 mark swap; mode $drop
