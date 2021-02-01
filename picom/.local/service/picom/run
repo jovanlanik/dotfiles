@@ -1,0 +1,9 @@
+#!/bin/sh
+ARGS='--experimental-backends'
+if lspci -n | grep -q '10de:1c82'
+then
+	ARGS="$ARGS --config $HOME/.config/picom/nvidia.conf"
+else
+	ARGS="$ARGS --config $HOME/.config/picom/intel.conf"
+fi
+exec picom $ARGS

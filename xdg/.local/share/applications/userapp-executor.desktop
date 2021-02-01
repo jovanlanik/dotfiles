@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=executor
+Terminal=true
+Name=Execute
+Comment=Execute with logging
+Icon=executor

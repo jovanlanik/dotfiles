@@ -1,0 +1,6 @@
+#!/bin/sh
+REAL=$(realpath -zs "$0")
+[ -z "$DOAS_USER" ] && exec doas "$REAL" $*
+[ -n "$1" ] && exec $*
+[ -n "$DOAS_SHELL" ] && exec $DOAS_SHELL
+exec $(getent passwd $DOAS_USER | cut -d: -f7)

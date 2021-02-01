@@ -1,0 +1,109 @@
+# i3 config file (v4)
+# Jovan Lanik's i3 config 1.0
+# www.github.com/jovanlanik
+# clean and simple
+
+exec_always --no-startup-id exec autotiling
+
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders both
+gaps inner +2
+gaps outer -2
+font pango:Dina 7.5
+title_align center
+for_window [window_role="About"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="wip"] floating enable
+
+client.focused #000000 #0c0c0c #f5f5f5 #000000 #000000
+client.focused_inactive #0c0c0c #0c0c0c #f5f5f5 #000000 #000000
+client.unfocused #000000 #0c0c0c #f5f5f5 #000000 #000000
+client.urgent #000000 #0c0c0c #f5f5f5 #000000 #000000
+
+set $mod mod4
+
+set $launch launchar
+set $terminal alacritty
+set $browser firefox
+set $fileman thunar
+set $torrent transmission-gtk
+set $modeling blender
+set $image gimp
+set $vector inkscape
+set $pulse pavucontrol
+
+set $wsn exec dunstify -r 10551 workspace
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+
+#workspace $ws1 output $output1
+#workspace $ws2 output $output1
+#workspace $ws3 output $output1
+#workspace $ws4 output $output2
+#workspace $ws5 output $output2
+#workspace $ws6 output $output2
+
+floating_modifier $mod
+
+bindsym $mod+x exec exec $launch
+bindsym $mod+t exec exec $terminal
+bindsym $mod+b exec exec $browser
+bindsym $mod+r exec exec $fileman
+bindsym $mod+c exec exec $torrent
+bindsym $mod+m exec exec $modeling
+bindsym $mod+i exec exec $image
+bindsym $mod+v exec exec $vector
+bindsym $mod+p exec exec $pulse
+
+bindsym $mod+z exec --no-startup-id ~/dotfiles/bin/promote_window.py
+bindsym $mod+Shift+z exec --no-startup-id ~/dotfiles/bin/swap.sh
+
+mode $drag {
+	bindsym --whole-window button1 mark swap; mode $drop
+	bindsym --whole-window button2 exec exit
+	bindsym --whole-window button3 exec exit
+}
+
+mode $drop {
+	bindsym --whole-window button1 swap container with mark swap; unmark swap
+	bindsym --whole-window button2 exec exit
+	bindsym --whole-window button3 exec exit
+}
+
+bindsym $mod+q kill
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+f fullscreen
+bindsym $mod+s split h
+bindsym $mod+d split v
+bindsym $mod+1 workspace $ws1; $wsn $ws1
+bindsym $mod+2 workspace $ws2; $wsn $ws2
+bindsym $mod+3 workspace $ws3; $wsn $ws3
+bindsym $mod+4 workspace $ws4; $wsn $ws4
+bindsym $mod+5 workspace $ws5; $wsn $ws5
+bindsym $mod+6 workspace $ws6; $wsn $ws6
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+s layout splith
+bindsym $mod+Shift+d layout splitv
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec sh -c 'kill -HUP $EXIT'
+

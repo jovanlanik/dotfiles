@@ -1,0 +1,357 @@
+/*
+// Jovan Lanik's GTK+3 Stylesheet
+// www.github.com/jovanlanik
+// clean and simple
+*/
+
+@define-color bg-color #f5f5f5;
+@define-color fg-color #0c0c0c;
+@define-color pr-color #2c66c9;
+@define-color sc-color #c92c66;
+
+/* TODO: titlebar height */
+
+messagedialog > decoration {
+	all: unset;
+	border: 2px black solid;
+}
+
+messagedialog > box.titlebar {
+	margin: 0;
+	background: @fg-color;
+}
+
+messagedialog > box:not(.titlebar) {
+	padding: 4px;
+}
+
+window {
+	background: @bg-color;
+	color: @fg-color;
+}
+
+scrollbar {
+	background-color: @bg-color;
+	border: none;
+}
+
+scrollbar * {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+scrollbar slider {
+	background-color: #7a7a7a;
+	border-radius: 0;
+	padding: 1px;
+	margin: 2px;
+}
+
+scrollbar.horizontal slider {
+	border-radius: 4px 4px 0 0;
+	margin-bottom: 0;
+}
+
+scrollbar.vertical slider {
+	border-radius: 4px 0 0 4px;
+	margin-right: 0;
+}
+
+scrollbar slider:hover {
+	background-color: #5684d3;
+}
+
+scrollbar slider:hover:active {
+	background-color: @pr-color;
+}
+
+undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
+
+menubar {
+	box-shadow: none;
+	background-color: @fg-color;
+	color: @bg-color;
+	font-family: 'Dina', monospace;
+	font-size: 11px;
+}
+
+menubar > menuitem {
+	color: @bg-color;
+	min-height: 18px;
+	padding: 0 8px;
+}
+
+menubar > menuitem:hover {
+	box-shadow: none;
+	background: @pr-color;
+	border-radius: 4px 4px 0 0;
+}
+
+menubar menu {
+	font-family: initial;
+	font-size: initial;
+}
+
+headerbar {
+	background: shade(@bg-color, 0.95);
+}
+
+/* TODO: fix toggle buttons */
+/* fix inactive .suggested and .destructive */
+
+button:not(.flat),
+toolbar > toolbutton > button {
+	border: 1px shade(@bg-color, 0.90) solid;
+	background: shade(@bg-color, 0.95);
+	box-shadow: 0px 2px 2px 0px alpha(@fg-color, 0.05);
+}
+
+button.suggested-action {
+	background: none;
+	background-color: @pr-color;
+	background-image: linear-gradient(0, @pr-color, #5684d3);
+	border-color: shade(@pr-color, 0.85);
+}
+
+button.destructive-action {
+	background: none;
+	background-color: @sc-color;
+	background-image: linear-gradient(0, @sc-color, #d35684);
+	border-color: shade(@sc-color, 0.85);
+}
+
+headerbar button:not(.flat):not(.suggested-action):not(.destructive-action) {
+	border-color: shade(@bg-color, 0.85);
+}
+
+toolbar.horizontal > toolbutton > button {
+	margin: 0 2px;
+}
+
+toolbar.horizontal > toolbutton:first-child > button {
+	margin-left: 0;
+}
+
+toolbar.horizontal > toolbutton:last-child > button {
+	margin-right: 0;
+}
+
+toolbar.vertical > toolbutton > button {
+	margin: 2px 0;
+}
+
+toolbar.vertical > toolbutton:first-child > button {
+	margin-top: 0;
+}
+
+toolbar.vertical > toolbutton:last-child > button {
+	margin-bottom: 0;
+}
+
+button:disabled {
+	color: shade(@bg-color, 0.65);
+	box-shadow: none;
+}
+
+button:active {
+	background: shade(@bg-color, 0.9);
+}
+
+button:hover {
+	border-color: shade(@bg-color, 0.85);
+}
+
+button.suggested-action:hover {
+	background-image: linear-gradient(180deg, @pr-color, #5684d3);
+	border-color: shade(@pr-color, 0.80);
+	box-shadow: 0px 2px 2px 0px alpha(@fg-color, 0.15);
+}
+
+button.destructive-action:hover {
+	background-image: linear-gradient(180deg, @sc-color, #d35684);
+	border-color: shade(@sc-color, 0.80);
+	box-shadow: 0px 2px 2px 0px alpha(@fg-color, 0.15);
+}
+
+headerbar button:not(.flat):not(.suggested-action):not(.destructive-action):hover {
+	border-color: shade(@bg-color, 0.80);
+	box-shadow: 0px 2px 2px 0px alpha(@fg-color, 0.15);
+}
+
+button:focus {
+	outline: none;
+	border-color: @pr-color;
+}
+
+button.suggested-action:focus,
+button.destructive-action:focus {
+	outline: 1px alpha(white, 0.30) solid;
+	outline-offset: -3px;
+}
+
+button.destructive-action:focus {
+	border-color: @sc-color;
+}
+
+window.thunar toolbar > toolbutton:nth-child(1) > button {
+	margin-right: 0;
+	border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+}
+
+window.thunar toolbar > toolbutton:nth-child(2) > button {
+	margin-left: 0;
+	border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+}
+
+window.thunar toolbar > toolitem > widget > box,
+window.thunar toolbar > toolitem > widget > widget.linked.path-bar > .path-bar-button:first-child {
+	margin-left: 2px;
+}
+
+window.thunar > grid > paned > grid > notebook {
+	border-top: 1px #d5d0cc solid;
+}
+
+window.thunar > grid > paned > grid > notebook > stack > scrolledwindow {
+	border-top: none;
+}
+
+entry {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+entry:not(.flat) {
+	border: 1px shade(@bg-color, 0.80) solid;
+	box-shadow: 0px 2px 2px 0px alpha(@fg-color, 0.05);
+}
+
+entry:disabled {
+	box-shadow: none;
+}
+
+entry:focus {
+	border-color: @pr-color;
+}
+
+/* TODO: fix vertical spinbutton */
+
+spinbutton {
+	outline: none;
+	box-shadow: none;
+	border-width: 1px;
+	border-color: @pr-color;
+}
+
+spinbutton > button.up,
+spinbutton > button.down {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+spinbutton.horizontal > entry,
+spinbutton.vertical > entry {
+	border: none;
+}
+
+/* finish tabs */
+
+notebook > header {
+	background: @bg-color;
+	padding: 4px;
+	box-shadow: none;
+	border: none;
+	outline: none;
+}
+
+notebook > header.top {
+	padding-bottom: 0;
+	border-bottom: 1px shade(@bg-color, 0.90) solid;
+}
+
+notebook > header.bottom {
+	padding-top: 0;
+	border-top: 1px shade(@bg-color, 0.90) solid;
+}
+
+notebook > header.left {
+	padding-right: 0;
+	border-right: 1px shade(@bg-color, 0.90) solid;
+}
+
+notebook > header.right {
+	padding-left: 0;
+	border-left: 1px shade(@bg-color, 0.90) solid;
+}
+
+notebook > header > tabs {
+	padding: 0;
+	box-shadow: none;
+	border: none;
+	outline: none;
+}
+
+notebook > header > tabs > tab {
+	margin: 0;
+	padding: 4px 10px;
+	border: 1px alpha(white, 0) solid;
+	box-shadow: none;
+	outline: none;
+}
+
+notebook > header.top > tabs > tab {
+	border-bottom: none;
+	margin-bottom: 1px;
+	border-radius: 4px 4px 0 0;
+}
+
+notebook > header.bottom > tabs > tab {
+	border-top: none;
+	margin-top: 1px;
+	border-radius: 0 0 4px 4px;
+}
+
+notebook > header.left > tabs > tab {
+	border-right: none;
+	margin-right: 1px;
+	border-radius: 4px 0 0 4px;
+}
+
+notebook > header.right > tabs > tab {
+	border-left: none;
+	margin-left: 1px;
+	border-radius: 0 4px 4px 0;
+}
+
+notebook > header > tabs > tab:not(:checked):hover {
+	background: none;
+	border: 1px shade(@bg-color, 0.90) solid;
+	border-radius: 4px;
+}
+
+notebook > header.top > tabs > tab:not(:checked):hover,
+notebook > header.bottom > tabs > tab:not(:checked):hover {
+	padding: 0px 8px;
+	margin: 4px 2px;
+}
+
+notebook > header.left > tabs > tab:not(:checked):hover,
+notebook > header.right > tabs > tab:not(:checked):hover {
+	padding: 2px 6px;
+	margin: 2px 4px;
+}
+
+notebook > header > tabs > tab:not(:checked) > box > button:last-child {
+	margin-right: 1px;
+}
+
+notebook > header > tabs > tab:checked {
+	background: white;
+	border-color: shade(@bg-color, 0.90);
+}
+

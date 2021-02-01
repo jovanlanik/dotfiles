@@ -1,2 +1,0 @@
-event=button/mute
-action=~/.config/acpi/mute.sh

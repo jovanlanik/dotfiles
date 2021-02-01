@@ -1,0 +1,5 @@
+#!/bin/bash
+"$@"
+tput bold
+read -n 1 -s -p "(END)"
+exit

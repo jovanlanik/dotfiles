@@ -1,0 +1,11 @@
+#!/bin/sh
+if test -z "$XORGCONFIG"
+then
+	lspci -n | grep -q '10de:1c82' && export XORGCONFIG='xorg.external.conf'
+fi
+
+if [ -z "$XDG_VTNR" ]; then
+	exec /usr/bin/X -nolisten tcp -config $XORGCONFIG "$@"
+else
+	exec /usr/bin/X -nolisten tcp -config $XORGCONFIG "$@" vt$XDG_VTNR
+fi

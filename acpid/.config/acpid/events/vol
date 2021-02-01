@@ -1,0 +1,2 @@
+event=button/volume*
+action=~/.config/acpid/vol.sh %e
