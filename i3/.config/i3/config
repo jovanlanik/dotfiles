@@ -4,6 +4,7 @@
 # clean and simple
 
 exec_always --no-startup-id exec autotiling
+exec_always --no-startup-id exec i3-workspace-notify.py
 
 default_border pixel 2
 default_floating_border pixel 2
@@ -33,20 +34,12 @@ set $image gimp
 set $vector inkscape
 set $pulse pavucontrol
 
-set $wsn exec dunstify -r 10551 workspace
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-
-#workspace $ws1 output $output1
-#workspace $ws2 output $output1
-#workspace $ws3 output $output1
-#workspace $ws4 output $output2
-#workspace $ws5 output $output2
-#workspace $ws6 output $output2
+#workspace 1 output $output1
+#workspace 2 output $output1
+#workspace 3 output $output1
+#workspace 4 output $output2
+#workspace 5 output $output2
+#workspace 6 output $output2
 
 floating_modifier $mod
 
@@ -60,8 +53,11 @@ bindsym $mod+i exec exec $image
 bindsym $mod+v exec exec $vector
 bindsym $mod+p exec exec $pulse
 
-bindsym $mod+z exec --no-startup-id i3-promote_window.py
-bindsym $mod+Shift+z exec --no-startup-id i3-swap.sh
+bindsym $mod+z exec --no-startup-id exec i3-promote-window.py
+bindsym $mod+Shift+z exec --no-startup-id exec i3-swap.sh
+
+bindsym --whole-window button8 exec --no-startup-id exec xmenu-open.sh xmenu-window.sh
+bindsym --whole-window button9 exec --no-startup-id exec xmenu-open.sh xmenu-window.sh
 
 mode $drag {
 	bindsym --whole-window button1 mark swap; mode $drop
@@ -83,12 +79,12 @@ bindsym $mod+l focus right
 bindsym $mod+f fullscreen
 bindsym $mod+s split h
 bindsym $mod+d split v
-bindsym $mod+1 workspace $ws1; $wsn $ws1
-bindsym $mod+2 workspace $ws2; $wsn $ws2
-bindsym $mod+3 workspace $ws3; $wsn $ws3
-bindsym $mod+4 workspace $ws4; $wsn $ws4
-bindsym $mod+5 workspace $ws5; $wsn $ws5
-bindsym $mod+6 workspace $ws6; $wsn $ws6
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
 
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -97,13 +93,13 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+s layout splith
 bindsym $mod+Shift+d layout splitv
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec sh -c 'kill -HUP $EXIT'
+bindsym $mod+Shift+e exec exec xorg-exit.sh
 

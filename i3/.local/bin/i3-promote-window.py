@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-#
-# Promotes the focused window by swapping it with the largest window.
-
 from i3ipc import Connection, Event
 
 def find_biggest_window (container):

@@ -1,4 +1,3 @@
 #!/bin/sh
 cd
-export EXIT=$(ps -o ppid= -p $(ps -o ppid= -p $$))
 exec i3

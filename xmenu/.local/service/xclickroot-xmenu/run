@@ -1,0 +1,3 @@
+#!/bin/sh
+cd
+exec xclickroot -r xmenu-open.sh xmenu-root.sh
