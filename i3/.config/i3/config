@@ -53,11 +53,14 @@ bindsym $mod+i exec exec $image
 bindsym $mod+v exec exec $vector
 bindsym $mod+p exec exec $pulse
 
+
 bindsym $mod+z exec --no-startup-id exec i3-promote-window.py
 bindsym $mod+Shift+z exec --no-startup-id exec i3-swap.sh
 
-bindsym --whole-window button8 exec --no-startup-id exec xmenu-open.sh xmenu-window.sh
-bindsym --whole-window button9 exec --no-startup-id exec xmenu-open.sh xmenu-window.sh
+set $menu exec --no-startup-id exec xmenu-open.sh xmenu-window.sh
+bindsym --whole-window $mod+Shift+button1 $menu
+bindsym --whole-window button8 $menu
+bindsym --whole-window button9 $menu
 
 mode $drag {
 	bindsym --whole-window button1 mark swap; mode $drop

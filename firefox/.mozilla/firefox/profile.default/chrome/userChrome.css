@@ -152,6 +152,11 @@
   text-align: center !important;
 }
 
+/* Overflow */
+#nav-bar-overflow-button .toolbarbutton-icon {
+	transform: rotate(90deg) !important;
+}
+
 /* Tabs */
 #tabbrowser-tabs,
 #tabbrowser-tabs .tabbrowser-arrowscrollbox {
