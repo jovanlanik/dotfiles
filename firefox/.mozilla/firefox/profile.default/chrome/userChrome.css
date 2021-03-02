@@ -1,8 +1,17 @@
+@-moz-document url(chrome://browser/content/browser.xhtml)
+{
+  #fullscreen-warning {
+    display: none !important;
+  }
+}
+
 /* Vars */
 :root {
   --tab-min-height: 18px !important;
   --ui-radius: 4px;
 }
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* Hide unwanted things */
 #window-controls,
@@ -10,6 +19,7 @@
 #appMenu-save-file-button,
 #appMenu-print-button,
 #appMenu-print-button + toolbarseparator,
+#context-sep-navigation,
 #context-stop,
 #context-bookmarkpage,
 #context-navigation,
@@ -42,6 +52,7 @@
 #userContext-label {
   display: none !important;
 }
+
 
 /* Fonts */
 #urlbar, #PersonalToolbar .bookmark-item, #tabbrowser-tabs .tab-label {
