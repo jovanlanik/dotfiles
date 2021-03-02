@@ -373,13 +373,13 @@ debug:
   # Log level
   #
   # Values for `log_level`:
-  #   - None
+  #   - Off
   #   - Error
   #   - Warn
   #   - Info
   #   - Debug
   #   - Trace
-  log_level: Warn
+  log_level: Off
 
   # Print all received window events.
   print_events: false
