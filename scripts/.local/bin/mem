@@ -1,0 +1,28 @@
+#!/bin/sh
+# Jovan Lanik's memory usage script 1.0
+# www.github.com/jovanlanik
+# clean and simple
+if test "$#" = '0'
+then
+	NUM="11"
+else
+	NUM=$(($1+1))
+fi
+ps -eo comm,size --sort -m_size | \
+sed "$NUM"q |\
+awk '
+FNR == 1 {next}
+
+BEGIN {
+	printf("\n\033[34m%16s\033[0m \033[31m%16s\033[0m\n\n", "COMMAND", "SIZE")
+}
+
+{
+	hr=$2/1024;
+	printf("%16s        %12.2f Mb\n", $1, hr)
+}
+
+END {
+	printf("\n")
+}
+'

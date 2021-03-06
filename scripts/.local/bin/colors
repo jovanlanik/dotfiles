@@ -1,0 +1,20 @@
+#!/bin/sh
+# Jovan Lanik's color script 2.0
+# www.github.com/jovanlanik
+# clean and simple
+
+line() {
+	for i in $(seq 0 7)
+	do
+		printf '\033[0;3%im%s' "$i" "$1"
+	done
+	printf '\033[0m\n'
+}
+
+line ' __    '
+line '/  \__ '
+line '\__/  \'
+line '/  \__/'
+line '\__/   '
+printf '\033[0m\n'
+

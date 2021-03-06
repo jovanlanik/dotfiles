@@ -1,0 +1,35 @@
+#!/bin/awk -f
+
+{
+	if (max_nf < NF)
+		max_nf = NF;
+	max_nr = NR;
+	for (x = 1; x <= NF; x++)
+		vector[x, NR] = $x;
+}
+
+END {
+	C = (NR+2)*2;
+	R = (NF+2)*4;
+	printf("\n ");
+	for(i = 0; i < C; ++i)
+	{
+		r = 202;
+		g = 44 + 100/C*i;
+		b = 102 - 58/C*i;
+		printf("\033[48;2;%d;%d;%dm", r,g,b);
+		for(j = 0; j < R; ++j)
+		{
+			if(vector[int(j/4), int(i/2)] == 0)
+			printf(" ");
+			else
+			{
+				printf("\033[0m");
+				printf(" ");
+				printf("\033[48;2;%d;%d;%dm", r,g,b);
+			}
+		}
+		printf("\033[0m\n ");
+	}
+	printf("\n");
+}
