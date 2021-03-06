@@ -3,11 +3,12 @@
 # www.github.com/jovanlanik
 # clean and simple
 
-SWAP_WAIT=1.6
+timeout=1.6
 
-i3-msg "mode \$drag"
+[ "$1" ] && mode="$1" || mode='drag'
+i3-msg "mode $mode"
 i3-msg "gaps inner all set 8"
-sleep $SWAP_WAIT
+sleep $timeout
 i3-msg "mode default"
 i3-msg "gaps inner all set 2"
 i3-msg unmark swap

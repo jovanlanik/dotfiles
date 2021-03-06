@@ -56,7 +56,7 @@ function _become() { _arguments -s -S -A '-*' : '*:: : _normal' }
 compdef _become become
 
 alias be="become "
-alias usv="SVDIR=$HOME/.cache/xorg-service${DISPLAY} sv"
+alias usv="SVDIR=$XRUNIT_SESSION/service sv"
 alias q="exit"
 alias da="keepas "
 alias watch="watch -tcn1 "

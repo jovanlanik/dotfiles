@@ -62,13 +62,13 @@ bindsym --whole-window $mod+Shift+button1 $menu
 bindsym --whole-window button8 $menu
 bindsym --whole-window button9 $menu
 
-mode $drag {
-	bindsym --whole-window button1 mark swap; mode $drop
+mode drag {
+	bindsym --whole-window button1 mark swap; mode drop
 	bindsym --whole-window button2 exec exit
 	bindsym --whole-window button3 exec exit
 }
 
-mode $drop {
+mode drop {
 	bindsym --whole-window button1 swap container with mark swap; unmark swap
 	bindsym --whole-window button2 exec exit
 	bindsym --whole-window button3 exec exit
@@ -104,5 +104,5 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec exec xorg-exit.sh
+bindsym $mod+Shift+e exec exec xrunit-exit
 

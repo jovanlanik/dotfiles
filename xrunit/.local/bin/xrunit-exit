@@ -1,0 +1,23 @@
+#!/bin/sh
+# xrunit
+# simple session manager built on top of startx and runit
+
+error() {
+	msg="Error: $1."
+	[ "$DISPLAY" ] && notify-send -u critical -a 'xrunit' 'exit' "$msg"
+	echo "$0: $msg" >&2
+	exit 1
+}
+
+[ "$XRUNIT_SESSION" ] || error "XRUNIT_SESSION isn't set"
+[ "$XRUNIT_SESSION" ] && session="$XRUNIT_SESSION"
+
+[ -f "$session/pid" ] || error "Session at $session doesn't exist"
+
+pid=$(cat "$session/pid")
+[ "$pid" ] || error "Session at $session has no PID"
+
+comm=$(ps -p "$pid" -o 'comm=')
+[ "$comm" = "runsvdir" ] || error "Session with PID $pid isn't xrunit"
+
+kill -HUP "$pid"
