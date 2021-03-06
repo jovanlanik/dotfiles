@@ -1,0 +1,9 @@
+#!/bin/sh
+while clipnotify
+do
+	for selection in primary secondary clipboard
+	do
+		targets="$(xclip -o -selection $selection -t TARGETS | grep -v TARGETS)"
+		[ "$targets" = "UTF8_STRING" ] && xclip -o -selection $selection | xclip -selection $selection
+	done
+done
