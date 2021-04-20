@@ -1,0 +1,50 @@
+#!/bin/sh
+# xrunit
+# simple session manager built on top of runit and xinit
+
+# start an X session, like startx
+
+error() { echo "$0: Error: $1." >&2; exit 1; }
+
+# determine unused display
+display=0
+while true
+do
+	[ -e "/tmp/.X${display}-lock" ] || [ -S "/tmp/.X11-unix/X${display}" ] || break
+	display=$((display + 1))
+done
+display=":$display"
+
+# find a suitable temporary session directory
+[ "$XDG_RUNTIME_DIR" ] && session="$XDG_RUNTIME_DIR/xrunit-session$display"
+[ "$XDG_RUNTIME_DIR" ] || session="$(mktemp -dt xrunit-sessionXXXXXXXXXX)"
+mkdir "$session"
+export XRUNIT_SESSION=$session
+export XDG_SESSION_TYPE=x11
+
+# if found use user script as X server
+xserver=/usr/bin/X
+[ -r "$HOME/.config/xrunit/server" ] && xserver="$HOME/.config/xrunit/server"
+[ -r "$XDG_CONFIG_HOME/xrunit/server" ] && xserver="$XDG_CONFIG_HOME/xrunit/server"
+
+# set vt
+tty=$(tty | sed -n '\|^/dev/tty[0-9]*$|s|/dev/tty||p')
+[ "$tty" ] && args="$args vt$tty -keeptty"
+
+# setup xauthority
+cookie=$(/usr/bin/mcookie)
+[ "$cookie" ] || error "Couldn't create cookie"
+xauth="$session/xauth"
+(umask 177; touch "$xauth")
+xauth -q -f "$xauth" << EOF
+add $(hostname)/unix$display . $cookie
+EOF
+export XAUTHORITY=$xauth
+args="$args -auth $xauth"
+
+xinit "$(which xrunit-session)" -- "$xserver" "$display" $args
+ret=$?
+
+# cleanup
+rm -rf "$session"
+exit $ret

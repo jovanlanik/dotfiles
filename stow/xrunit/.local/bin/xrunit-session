@@ -1,0 +1,49 @@
+#!/bin/sh
+# xrunit
+# simple session manager built on top of startx and runit
+
+fn() { PATH='' command -v "$1" >/dev/null && $*; }
+error() { echo "$0: Error: $1." >&2; exit 1; }
+
+[ "$XRUNIT_SESSION" ] || error 'XRUNIT_SESSION not set'
+session=$XRUNIT_SESSION
+
+# source session script
+# at this point in time:
+# - command are executed
+# - variables set
+# special functions (pre_service, post_service, end_session) are executed later
+[ -r "$HOME/.config/xrunit/session" ] && conf="$HOME/.config/xrunit/session"
+[ -r "$XDG_CONFIG_HOME/xrunit/session" ] && conf="$XDG_CONFIG_HOME/xrunit/session"
+[ "$conf" ] && . "$conf"
+
+# links all user services to svdir inside the session directory
+services="$HOME/.local/service"
+svdir="$session/service"
+mkdir "$svdir"
+for service in "$services"/*/
+do
+	svname=$(basename "$service")
+	mkdir "$svdir/$svname"
+	ln -s "$service"/* "$svdir/$svname"/
+done
+
+# this function is usefull for changing things in the svdir,
+# like adding or generating other services.
+fn pre_service
+
+runsvdir "$svdir" &
+pid=$!
+echo "$pid" > "$session/pid"
+# post_service is executed after runsvdir is started,
+# but it doesn't guarantee any service is ready.
+# if you intend to do things that depend on a service here,
+# please check the service beforehand.
+fn post_service
+# wait until runsvdir exits
+wait "$pid"
+
+# cleanup
+fn end_session
+rm -rf "$session/service"
+rm -f "$session/pid"

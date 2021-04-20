@@ -1,0 +1,16 @@
+#!/bin/sh
+# Jovan Lanik's xrunit server config 1.0
+# www.github.com/jovanlanik
+# clean and simple
+
+args=' -nolisten tcp -nolisten local'
+
+if [ -z "$XORGCONFIG" ]
+then
+	config='xorg.integrated.conf'
+	lspci -n | grep -q '10de:0dfa' && config='xorg.dedicated.conf'
+	lspci -n | grep -q '10de:1c82' && config='xorg.external.conf'
+	args="$args -config $config"
+fi
+
+exec /usr/bin/X $args $*

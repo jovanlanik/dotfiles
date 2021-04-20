@@ -1,0 +1,38 @@
+@-moz-document domain("youtube.com") {
+	@media only screen and (min-width: 1200px)
+	{
+		* {
+			--ytd-rich-grid-items-per-row: 4 !important;
+		}
+
+		ytd-rich-grid-renderer,
+		#home-page-skeleton .rich-shelf-videos {
+			flex-grow: 1;
+			margin-left: 64px !important;
+			margin-right: 64px !important;
+		}
+
+		.rich-grid-video-skeleton {
+			min-width: unset !important;
+			flex-basis: calc(25% - 16px - 0.01px) !important;
+		}
+		
+	}
+
+	@media only screen and (min-width: 1700px)
+	{
+		* {
+			--ytd-rich-grid-items-per-row: 5 !important;
+		}
+
+		ytd-rich-grid-renderer,
+		#home-page-skeleton .rich-shelf-videos {
+			margin-left: 128px !important;
+			margin-right: 128px !important;
+		}
+
+		.rich-grid-video-skeleton {
+			flex-basis: calc(100% / 5 - 16px - 0.01px) !important;
+		}
+	}
+}
