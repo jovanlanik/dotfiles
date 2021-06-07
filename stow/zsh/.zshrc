@@ -68,3 +68,4 @@ alias lh="ls -d .*"
 alias lls="ls -l"
 alias lla="la -l"
 alias llh="lh -l"
+alias startx=xrunit

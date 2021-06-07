@@ -24,6 +24,8 @@ export XDG_SESSION_TYPE=x11
 
 # if found use user script as X server
 xserver=/usr/bin/X
+[ -r "/etc/X11/xinit/xserverrc" ] && xserver="/etc/X11/xinit/xserverrc"
+[ -r "$HOME/.xserverrc" ] && xserver="$HOME/.xserverrc"
 [ -r "$HOME/.config/xrunit/server" ] && xserver="$HOME/.config/xrunit/server"
 [ -r "$XDG_CONFIG_HOME/xrunit/server" ] && xserver="$XDG_CONFIG_HOME/xrunit/server"
 
@@ -42,7 +44,7 @@ EOF
 export XAUTHORITY=$xauth
 args="$args -auth $xauth"
 
-xinit "$(which xrunit-session)" -- "$xserver" "$display" $args
+xinit "$(which xrunit-session)" $* -- "$xserver" "$display" $args
 ret=$?
 
 # cleanup

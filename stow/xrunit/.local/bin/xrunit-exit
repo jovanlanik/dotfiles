@@ -1,6 +1,6 @@
 #!/bin/sh
 # xrunit
-# simple session manager built on top of startx and runit
+# simple session manager built on top of runit and xinit
 
 error() {
 	msg="Error: $1."

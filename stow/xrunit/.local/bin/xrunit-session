@@ -1,6 +1,6 @@
 #!/bin/sh
 # xrunit
-# simple session manager built on top of startx and runit
+# simple session manager built on top of runit and xinit
 
 fn() { PATH='' command -v "$1" >/dev/null && $*; }
 error() { echo "$0: Error: $1." >&2; exit 1; }
@@ -39,11 +39,15 @@ echo "$pid" > "$session/pid"
 # but it doesn't guarantee any service is ready.
 # if you intend to do things that depend on a service here,
 # please check the service beforehand.
+# if you don't want to run your wm as a service start it here
+# and call xrunit-exit after it exits
 fn post_service
 # wait until runsvdir exits
 wait "$pid"
+ret=$?
 
 # cleanup
 fn end_session
 rm -rf "$session/service"
 rm -f "$session/pid"
+exit $ret
